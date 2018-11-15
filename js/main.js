@@ -1,17 +1,24 @@
-const vid = document.getElementById("myVideo");
-const span = document.getElementsByTagName('span');
-
-for (let i = 0; i < span.length; i += 1) {
-vid.addEventListener ('ontimeupdate' () => {
-  vid.currentTime = span[i].style.color
-}
+$('video').mediaelementplayer({
+  features: ['playpause', 'tracks', 'progress', 'fullscreen', 'volume',],
+  startLanguage: 'en',
+  stretching: 'responsive'
 });
 
-// Assign an ontimeupdate event to the <video> element, and execute a function if the current playback position has changed
-vid.ontimeupdate = function() {myFunction()};
 
-function myFunction() {
-// Display the current position of the video in a <p> element with id="demo"
-    document.getElementById("demo").innerHTML = vid.currentTime;
 
-vid.addEventListener ()
+const video = document.getElementsByTagName('video')[0];
+const span = document.querySelectorAll('p span');
+
+video.ontimeupdate = () => {
+	const vidTime = video.currentTime;
+
+	for (let i = 0; i < span.length; i += 1) {
+		if (vidTime > span[i].getAttribute("data-start") &&
+		vidTime < span[i].getAttribute("data-end")) {
+			span[i].style.color = 'orange';
+		}
+		else {
+			span[i].style.color = '';
+		}
+	}
+};

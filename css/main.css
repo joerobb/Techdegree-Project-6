@@ -9,23 +9,30 @@ body {
   color: #384047;
 }
 
-p {
-margin-top: 20px;
-margin-left: 30px;
-margin-right: 30px;
-margin-bottom: 20px;
+.textWrapper {
+display:block;
+margin: 30px;
 }
 
 .videoWrapper {
-  margin: 0 auto;
-  display:block;
-  width: 100%;
+  margin-bottom: 2%;
+  display: block;
+  width:100%;
 }
 
+@media screen and (min-width:768px ) {
 
-.mejs__player {
-  width:852px;
-  height:300px;
-  margin: 0 auto;
-  display: block;
+.textWrapper {
+margin-left: 12%;
+margin-right: 12%;
+text-align: left;
+}
+
+.videoWrapper {
+width: 76%;
+margin-top: 2%;
+margin-left: 12%;
+margin-right: 12%;
+}
+
 }
