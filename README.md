@@ -1,1 +1,1 @@
-# Techdegree Project 6
+# Using jQuery and mediaElement.js, this is a video that links to a transcript as it plays. This required a knowledge of implementing basic jQuery functions such as onTimeUpdate() along with DOM manipulation and methods such as getAttribute().
